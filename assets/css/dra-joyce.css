@@ -44,6 +44,20 @@ a{color:inherit;text-decoration:none}
 .sec--areia{background:linear-gradient(170deg,#F6E9D6,#EADDC9)}
 .sec--escuro{background:linear-gradient(160deg,#8A3410,#BC4E1B 50%,#D2652C);color:#FFF3E6}
 
+/* ---------- POR QUE DAR CONTINUIDADE (texto + foto) ---------- */
+.continuidade{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,64px);align-items:center}
+.continuidade-foto{position:relative;margin:0}
+.continuidade-foto img{
+  width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block;
+  border-radius:200px 200px var(--raio-g) var(--raio-g);
+  border:1px solid rgba(255,246,234,.28);box-shadow:0 30px 70px -34px rgba(40,15,5,.7);
+}
+@media(max-width:900px){
+  .continuidade{grid-template-columns:1fr;gap:34px}
+  /* no empilhado a foto vem antes: apresenta a profissional e depois o argumento */
+  .continuidade-foto{order:-1;max-width:420px;margin:0 auto}
+}
+
 /* ---------- tipografia ---------- */
 h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.1;letter-spacing:-.015em}
 .h-sec{font-size:clamp(28px,4.2vw,48px);font-variation-settings:'SOFT' 0,'WONK' 1;max-width:19ch}

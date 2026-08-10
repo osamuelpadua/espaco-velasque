@@ -480,6 +480,55 @@ li.meio .ic{background:rgba(51,25,13,.08);color:rgba(51,25,13,.5)}
 .equipe-card p{font-size:15px;color:rgba(247,237,224,.75)}
 .equipe-card.foco{background:rgba(255,246,234,.16);border-color:var(--areia)}
 
+/* ---------- O QUE ELA TRATA (cards com foto) ---------- */
+.trata-grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+.trata-card{
+  position:relative;overflow:hidden;border-radius:var(--raio-g);
+  min-height:360px;display:flex;align-items:center;
+  background:var(--creme-2);box-shadow:var(--sombra);
+}
+.trata-card img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .7s cubic-bezier(.66,0,.16,1);
+}
+.trata-card:hover img{transform:scale(1.05)}
+/* véu cremoso curto: dá contraste só atrás do texto e libera a foto */
+.trata-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(244,234,220,.94) 0%,rgba(244,234,220,.85) 24%,rgba(244,234,220,.38) 42%,rgba(244,234,220,0) 56%);
+}
+/* o teto em ch evita linhas de uma palavra só nos textos mais longos */
+.trata-txt{position:relative;z-index:2;padding:26px;max-width:min(48%,24ch)}
+.trata-txt h3{
+  font-family:var(--display);font-size:24px;font-weight:500;line-height:1.05;
+  color:var(--tijolo);margin-bottom:12px;
+}
+.trata-txt h3::after{content:'';display:block;width:30px;height:2px;background:var(--areia);margin-top:10px}
+.trata-txt p{font-size:14.5px;line-height:1.5;font-weight:500;color:var(--tinta)}
+
+.trata-card--cta{background:var(--creme-2);align-items:center}
+.trata-card--cta::after{content:none}
+.trata-card--cta .trata-txt{max-width:100%}
+.trata-marca{
+  position:absolute;right:-10px;bottom:-58px;z-index:1;pointer-events:none;
+  font-family:var(--display);font-size:210px;line-height:1;color:var(--areia);opacity:.34;
+}
+.trata-pergunta{font-family:var(--display);font-size:23px;line-height:1.15;color:var(--tinta);margin-bottom:22px}
+
+@media(max-width:980px){
+  .trata-grade{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .trata-grade{grid-template-columns:1fr;gap:14px}
+  .trata-card{min-height:250px}
+  /* na coluna única a foto respira melhor com o texto embaixo */
+  .trata-card{align-items:flex-end}
+  .trata-card::after{background:linear-gradient(180deg,rgba(244,234,220,0) 22%,rgba(244,234,220,.9) 55%,var(--creme-2) 78%)}
+  .trata-txt{max-width:100%;padding:24px}
+  .trata-card--cta{align-items:center}
+  .trata-marca{font-size:150px;bottom:-40px}
+}
+
 /* ---------- COMO FUNCIONA ---------- */
 .passos{margin-top:44px;display:flex;flex-direction:column}
 .passo{display:grid;grid-template-columns:64px 1fr;gap:20px;position:relative;padding-bottom:32px}

@@ -1,28 +1,37 @@
 /* ---------- MOSAICO DE DEPOIMENTOS (duas linhas, sentidos opostos, loop infinito) ---------- */
-.depo-mosaico{margin-top:40px;display:flex;flex-direction:column;gap:8px}
+.depo-mosaico{
+  margin-top:40px;display:flex;flex-direction:column;gap:8px;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+}
 .depo-linha{
   overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
 }
 .depo-trilha{
-  display:flex;align-items:flex-start;gap:8px;width:max-content;
-  animation:depo-rolar 60s linear infinite;
+  display:flex;align-items:center;gap:10px;width:max-content;
+  animation:depo-rolar 70s linear infinite;
 }
 .depo-trilha--reversa{animation-direction:reverse}
 .depo-linha:hover .depo-trilha{animation-play-state:paused}
 .depo-trilha img{
-  height:190px;width:auto;flex:none;
+  /* prints de conversa (retrato): altura generosa, largura segue a proporção natural */
+  height:380px;width:auto;flex:none;
   border-radius:14px;border:1px solid var(--linha);
   object-fit:cover;background:var(--creme-2);
+}
+.depo-trilha img.depo-larga{
+  /* prints de comentário (paisagem): altura menor pra não dominar a fileira */
+  height:160px;
 }
 @keyframes depo-rolar{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
 @media(max-width:900px){
-  .depo-trilha{gap:6px;animation-duration:42s}
-  .depo-trilha img{height:130px;border-radius:10px}
+  .depo-trilha{gap:6px;animation-duration:46s}
+  .depo-trilha img{height:250px;border-radius:10px}
+  .depo-trilha img.depo-larga{height:105px}
 }
 @media(prefers-reduced-motion:reduce){
   .depo-trilha{animation:none;overflow-x:auto}

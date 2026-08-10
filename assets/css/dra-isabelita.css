@@ -529,6 +529,58 @@ li.meio .ic{background:rgba(51,25,13,.08);color:rgba(51,25,13,.5)}
   .trata-marca{font-size:150px;bottom:-40px}
 }
 
+/* ---------- O QUE ELA TRATA: VARIAÇÃO EDITORIAL ---------- */
+#tratamentos{padding:clamp(56px,5vw,88px) 0}
+#tratamentos .wrap{max-width:1536px;padding-right:30px;padding-left:30px}
+#tratamentos .trata-intro{display:block;margin-bottom:34px}
+#tratamentos .trata-grade{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:0}
+#tratamentos .trata-card{
+  border-radius:16px;min-height:360px;aspect-ratio:1.02;background:var(--creme-2);box-shadow:none;
+}
+#tratamentos .trata-card::after{
+  background:linear-gradient(90deg,rgba(244,234,220,.82) 0%,rgba(244,234,220,.72) 24%,rgba(244,234,220,.42) 38%,rgba(244,234,220,.14) 50%,rgba(244,234,220,0) 62%);
+}
+#tratamentos .trata-txt{padding:clamp(30px,3vw,48px);max-width:min(58%,28ch)}
+#tratamentos .trata-txt h3{
+  font-size:clamp(27px,2.25vw,35px);line-height:1.08;margin-bottom:16px;
+}
+#tratamentos .trata-txt h3::after{height:1.5px;margin-top:17px}
+#tratamentos .trata-txt p{font-size:16px;line-height:1.65}
+
+/* Cada foto recebe o seu próprio enquadramento e faixa de leitura. */
+#tratamentos .trata-card--ombro img{object-position:right center}
+#tratamentos .trata-card--ombro img{transform:scaleX(-1)}
+#tratamentos .trata-card--ombro:hover img{transform:scaleX(-1) scale(1.05)}
+#tratamentos .trata-card--ombro::after{background:linear-gradient(90deg,rgba(244,234,220,.84) 0%,rgba(244,234,220,.74) 24%,rgba(244,234,220,.44) 40%,rgba(244,234,220,.12) 54%,rgba(244,234,220,0) 68%)}
+#tratamentos .trata-card--ombro .trata-txt{margin-left:0;max-width:min(56%,28ch)}
+#tratamentos .trata-card--joelho img,#tratamentos .trata-card--quadril img,#tratamentos .trata-card--pos img{object-position:right center}
+#tratamentos .trata-card--joelho img,#tratamentos .trata-card--pos img{transform:scaleX(-1)}
+#tratamentos .trata-card--joelho:hover img,#tratamentos .trata-card--pos:hover img{transform:scaleX(-1) scale(1.05)}
+#tratamentos .trata-card--tornozelo .trata-txt{margin-top:0;transform:none}
+#tratamentos .trata-card--pos .trata-txt{transform:translateY(-36px)}
+
+#tratamentos .trata-card--cta{background:#ECDAC5}
+#tratamentos .trata-card--cta .trata-txt{max-width:100%;padding:clamp(30px,3vw,48px)}
+#tratamentos .trata-marca{right:0;bottom:-82px;font-size:clamp(220px,22vw,330px);opacity:.38}
+#tratamentos .trata-pergunta{font-size:clamp(25px,2vw,31px);line-height:1.2;margin-bottom:30px;max-width:13ch}
+#tratamentos .trata-card--cta .btn{padding:17px 28px}
+
+@media(max-width:980px){
+  #tratamentos .wrap{padding-right:24px;padding-left:24px}
+  #tratamentos .trata-grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  #tratamentos .trata-card--tornozelo .trata-txt,#tratamentos .trata-card--pos .trata-txt{transform:none}
+}
+@media(max-width:640px){
+  #tratamentos{padding:var(--sec-y) 0}
+  #tratamentos .trata-grade{grid-template-columns:1fr;gap:14px}
+  #tratamentos .trata-card{min-height:280px;aspect-ratio:1.2}
+  #tratamentos .trata-card::after,#tratamentos .trata-card--ombro::after{background:linear-gradient(180deg,rgba(244,234,220,0) 34%,rgba(244,234,220,.26) 52%,rgba(244,234,220,.72) 72%,rgba(244,234,220,.9) 88%)}
+  #tratamentos .trata-txt,#tratamentos .trata-card--ombro .trata-txt{max-width:100%;padding:24px;margin-left:0}
+  #tratamentos .trata-txt h3{font-size:28px}
+  #tratamentos .trata-txt p{font-size:15px;line-height:1.55}
+  #tratamentos .trata-marca{font-size:150px;bottom:-40px}
+}
+
 /* ---------- COMO FUNCIONA ---------- */
 .passos{margin-top:44px;display:flex;flex-direction:column}
 .passo{display:grid;grid-template-columns:64px 1fr;gap:20px;position:relative;padding-bottom:32px}

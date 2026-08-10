@@ -91,7 +91,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.1;letter-sp
 .nav.solida .marca-logo{height:34px}
 .rodape-logo{height:52px;width:auto;display:block}
 .marca svg{width:34px;height:34px;flex:none}
-.marca-txt{font-family:var(--display);font-size:17px;line-height:1;letter-spacing:.01em;color:var(--tijolo);transition:color .35s}
+.marca-txt{font-family:var(--display);font-size:17px;line-height:1;letter-spacing:.01em;color:var(--tijolo);transition:color .35s;transform:translateY(5px)}
 .marca-txt small{display:block;font-family:var(--corpo);font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.72;margin-top:4px}
 .nav.solida .marca-txt{color:var(--tijolo)}
 .nav-links{display:flex;gap:2px;margin-left:auto}

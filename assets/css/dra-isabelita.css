@@ -94,13 +94,13 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.1;letter-sp
 .marca-txt{font-family:var(--display);font-size:17px;line-height:1;letter-spacing:.01em;color:var(--tijolo);transition:color .35s}
 .marca-txt small{display:block;font-family:var(--corpo);font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.72;margin-top:4px}
 .nav.solida .marca-txt{color:var(--tijolo)}
-.nav-links{display:flex;gap:6px;margin-left:auto}
+.nav-links{display:flex;gap:2px;margin-left:auto}
 .nav-links a{
-  font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-60);
-  padding:10px 15px;border-radius:999px;border:1px solid rgba(51,25,13,.14);transition:.25s;
+  font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-60);
+  padding:9px 11px;border-radius:999px;white-space:nowrap;transition:.25s;
 }
 .nav-links a:hover{background:rgba(255,255,255,.7);color:var(--tijolo)}
-.nav.solida .nav-links a{color:var(--tinta-60);border-color:var(--linha)}
+.nav.solida .nav-links a{color:var(--tinta-60)}
 .nav.solida .nav-links a:hover{background:var(--creme-2);color:var(--tijolo)}
 .nav-cta{
   font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;

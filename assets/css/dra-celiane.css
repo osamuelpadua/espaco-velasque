@@ -85,6 +85,21 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.1;letter-sp
 .destaque{color:var(--tijolo);font-weight:600}
 .sec--escuro .destaque{color:var(--areia)}
 
+/* ---------- RESSONÂNCIA ---------- */
+.ressonancia-topo{
+  display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);
+  gap:clamp(32px,5vw,68px);align-items:stretch;
+}
+.ressonancia-foto{
+  margin:0;overflow:hidden;border-radius:var(--raio-g);background:#181614;
+  box-shadow:var(--sombra);min-height:340px;
+}
+.ressonancia-foto img{width:100%;height:100%;object-fit:cover;object-position:center}
+@media(max-width:900px){
+  .ressonancia-topo{grid-template-columns:1fr;gap:30px}
+  .ressonancia-foto{min-height:0;aspect-ratio:1/1}
+}
+
 /* ---------- botões ---------- */
 .btn{
   display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;

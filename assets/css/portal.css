@@ -137,12 +137,29 @@ a{color:inherit;text-decoration:none}
   .intro{flex:none;border-right:none;border-bottom:1px solid var(--linha);padding:88px 24px 40px}
   .intro-meio{padding:30px 0}
   .paineis{flex-direction:column}
-  .painel{flex:none;min-height:72svh;border-left:none;border-top:1px solid rgba(255,246,234,.16)}
+  /* a foto ganha faixa própria, proporcional à largura da tela (nunca à altura),
+     e o texto flui abaixo dela — assim o rosto nunca fica sob o conteúdo */
+  .painel{
+    --foto-h:clamp(300px,108vw,640px);
+    flex:none;min-height:0;border-left:none;border-top:1px solid rgba(255,246,234,.16);
+    display:flex;flex-direction:column;justify-content:flex-end;background:#280F05;
+  }
   .painel-abre{grid-template-rows:1fr;opacity:1}
-  .painel-foto img{transform:scale(1);filter:saturate(.95) brightness(.9)}
-  .painel-scrim{background:linear-gradient(to top,rgba(40,15,5,.95) 0%,rgba(40,15,5,.8) 34%,rgba(40,15,5,.25) 68%,rgba(40,15,5,.2) 100%)}
-  .painel-txt{padding:28px 24px 34px}
+  .painel-foto{position:relative;inset:auto;flex:none;width:100%;height:var(--foto-h)}
+  .painel-foto img{transform:scale(1);filter:saturate(.95) brightness(.92);object-position:50% 22%}
+  .painel-scrim{
+    inset:0 0 auto 0;height:var(--foto-h);
+    background:
+      linear-gradient(to bottom,rgba(40,15,5,.34) 0%,rgba(40,15,5,.1) 30%,rgba(40,15,5,.34) 66%,rgba(40,15,5,.82) 86%,#280F05 100%),
+      linear-gradient(to top,rgba(168,67,26,.34) 0%,transparent 34%);
+  }
+  .painel-txt{position:relative;padding:22px 24px 36px}
   .painel-desc{font-size:15.5px}
+}
+/* em telas mais largas o teto de altura da faixa aperta o enquadramento:
+   desce o recorte para manter o rosto inteiro dentro dela */
+@media(max-width:900px) and (min-width:601px){
+  .painel-foto img{object-position:50% 32%}
 }
 @media(prefers-reduced-motion:reduce){
   *{transition-duration:.01ms!important;animation:none!important}

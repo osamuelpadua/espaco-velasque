@@ -688,7 +688,7 @@ li.meio .ic{background:rgba(51,25,13,.08);color:rgba(51,25,13,.5)}
 /* ---------- SLOTS DE FOTO ---------- */
 .slot-foto{
   border-radius:var(--raio-g);overflow:hidden;background:var(--branco);
-  border:1px dashed var(--areia);
+  border:1px solid var(--linha);
 }
 .slot-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .slot-vazio{
@@ -698,3 +698,21 @@ li.meio .ic{background:rgba(51,25,13,.08);color:rgba(51,25,13,.5)}
 .slot-vazio strong{font-family:var(--display);font-size:19px;color:var(--tinta-60)}
 .slot-vazio span{font-size:12.5px}
 .legenda-foto{margin-top:11px;font-size:13px;color:var(--tinta-40)}
+
+/* ---------- RECURSOS (mesas) ---------- */
+.recursos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
+@media(max-width:900px){.recursos{grid-template-columns:1fr}}
+.recurso{
+  padding:30px;border-radius:var(--raio-g);background:var(--branco);border:1px solid var(--linha);
+  display:flex;flex-direction:column;transition:box-shadow .3s,border-color .3s;
+}
+.recurso:hover{box-shadow:var(--sombra);border-color:var(--areia)}
+.recurso-selo{
+  align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--terracota);border:1px solid var(--areia);border-radius:999px;padding:6px 13px;margin-bottom:16px;
+}
+.recurso h3{font-size:24px;margin-bottom:12px}
+.recurso-lista{list-style:none;display:flex;flex-direction:column;gap:9px;margin:18px 0 24px}
+.recurso-lista li{display:flex;gap:11px;font-size:14.8px;color:var(--tinta-60);line-height:1.5}
+.recurso-lista li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--terracota);flex:none;margin-top:8px}
+.recurso .slot-foto{margin-top:auto}

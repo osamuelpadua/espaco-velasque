@@ -701,6 +701,16 @@ li.meio .ic{background:rgba(51,25,13,.08);color:rgba(51,25,13,.5)}
   justify-content:center;color:var(--areia);letter-spacing:.26em;font-size:11.5px;margin-bottom:22px;
 }
 .hero-txt .hero-eyebrow::before{display:none}
+.hero-selo{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:999px;
+  border:1px solid rgba(255,246,234,.3);background:rgba(255,246,234,.08);
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,246,234,.92);margin-bottom:18px;
+}
+.hero-selo i{
+  width:6px;height:6px;border-radius:50%;background:var(--terracota);flex:none;
+  box-shadow:0 0 0 4px rgba(210,101,44,.22);animation:pulso 2.6s ease-in-out infinite;
+}
 .hero-txt h1{font-size:clamp(33px,4.4vw,57px);line-height:1.06;letter-spacing:-.02em}
 .hero-txt h1 em{
   display:block;font-style:italic;color:#E4B77F;text-shadow:none;
@@ -772,6 +782,9 @@ li.meio .ic{background:rgba(51,25,13,.08);color:rgba(51,25,13,.5)}
   .hero-linha{background:rgba(51,25,13,.08)}
   .hero-col{background:rgba(51,25,13,.07)}
   .hero-assinatura{color:var(--tijolo)}
+  .hero-selo{
+    border-color:rgba(51,25,13,.16);background:rgba(255,255,255,.66);color:var(--tijolo);
+  }
   .hero-logo{filter:brightness(0) saturate(100%) invert(33%) sepia(72%) saturate(1180%) hue-rotate(348deg)}
 
   .hero-bloco{background:var(--branco);border-color:rgba(51,25,13,.1);box-shadow:0 16px 34px -26px rgba(90,45,30,.5)}
